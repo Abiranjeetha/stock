@@ -1,0 +1,63 @@
+<header class="shadow">
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand text-info" href="#">
+                <h1 class="tm-site-title mb-0">Stock Charts</h1>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<section class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col" style="height: 70vh;">
+            <form class="pt-4" (ngSubmit)="onSubmit()">
+                <div class="card shadow" style="height: 300px; width:500px;">
+                    <p class="h4 card-header">User Registration</p>
+                    <div class="card-body bg-light">
+                        <form (ngSubmit)="onSubmit()">
+
+                            <div class="input-group mt-3 mb-3">
+                                <input [(ngModel)]="username" name="username" type="text" class="form-control" placeholder="Enter Username"/>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input [(ngModel)]="password" name="password" type="password" class="form-control" placeholder="Enter password"/>
+                            </div>
+
+                            <div class="input-group">
+                                <input [(ngModel)]="rPassword" name="rPassword" type="password" class="form-control"
+                                    placeholder="Re-enter Password" />
+                            </div>
+                            <small *ngIf="password!==rPassword" class="text-danger">Passwords do not match</small>
+
+                            <div class="input-group mt-3 mb-3">
+                                <input [(ngModel)]="email" name="email" type="text" class="form-control" placeholder="Enter Email-ID"/>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input [(ngModel)]="mobile" name="mobile" type="text" class="form-control" placeholder="Enter Mobile No."/>
+                            </div>
+                            
+                                <div class="text-center">
+                                <div class="col">
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                        <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                                </div>
+                                </div>
+                                <br>
+                                <div class="text-center">
+                                <div>
+                                    <button routerLink="/sign-in" type="button" class="btn btn-primary" style="width: 350px;">Back to Sign-in</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</section>

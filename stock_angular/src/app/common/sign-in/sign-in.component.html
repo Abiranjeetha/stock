@@ -1,0 +1,49 @@
+<header class="shadow">
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+        <div class="container">
+             <a class="navbar-brand text-info " href="#">
+                <h1 class="tm-site-title mb-0">Stock Charts</h1>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<section class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <form class="pt-4">
+                <div class="card shadow" style="height: 300px; width:500px;">
+                    <p class="h4 card-header">Login</p>
+                    <div class="card-body  bg-light">
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="input-group mt-3 mb-3">
+                                <input [(ngModel)]="username" name="username" type="text" Placeholder="Enter username" class="form-control" />
+                            </div>
+                            <div class="input-group mb-3">
+                                
+                                <input [(ngModel)]="password" name="password" type="password" class="form-control" placeholder="Enter password"/>
+                            </div>
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-success">Login</button>
+                            </div>
+                            <div class="text-center">
+                            <small *ngIf="invalidLogin" class="text-danger ml-2">
+                                Invalid Username/Password
+                            </small>
+                            <br>
+                        </div>
+                            <div class="text-center">
+                            <small class="ml-2 h6">
+                                Don't have an account?&nbsp;&nbsp; <a routerLink="/sign-up" class="text-info text-center">Register</a>
+                            </small>
+                        </div>
+                        </form>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</section>

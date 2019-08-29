@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+                <div class="card shadow" style="width: 400px; height: 400px;">
+                        <p class="h4 card-header">Update IPO</p>
+                        <div class="card-body bg-light">
+                            <form (ngSubmit)="onSubmit()">
+                                <div class="input-group mt-3 mb-3">
+                                    
+                                    <input [(ngModel)]="ipo.companyName" name="companyName" type="text" class="form-control" placeholder="Enter Company Name"/>
+                                </div>
+                                <div class="input-group mb-3">
+                                   
+                                    <select [(ngModel)]="ipo.stockExchangeName" name="stockExchangeName" class="custom-select" id="inputGroupSelect01" >
+                                        <option *ngFor="let stockExchange of stockExchanges" [value]="stockExchange.stockExchangeName">
+                                            {{ stockExchange?.stockExchangeName }}</option>
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    
+                                    <input [(ngModel)]="ipo.pricePerPay" name="pricePerPay" type="text" class="form-control" placeholder="Price/Share in Rs.">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    
+                                    <input [(ngModel)]="ipo.totalNumberOfShares" name="totalNumberOfShares" type="text" class="form-control" placeholder="Total No. of shares" />
+                                </div>
+                                <div class="input-group mb-3">
+                                    
+                                    <input [(ngModel)]="ipo.openDateTime" name="openDateTime" type="datetime-local"
+                                        placeholder="mm/dd/yyyy hh:mm AM/PM" class="form-control" />
+                                </div>
+                                <div class="d-flex no-gutters">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                    <div>
+                                        <button (click)="backClicked()" class="btn btn-secondary">Back</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+        </div>
+        <div class="col"></div>
+    </div>
+
+</div>
